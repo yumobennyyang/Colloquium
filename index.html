@@ -20,6 +20,9 @@
   <!-- Load the Roboto font from Google Fonts for use on our page -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
   <!-- Link our CSS file to style the page -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -55,32 +58,39 @@
       efficiency in urban navigation systems?
       <br><br>What happens when we design maps to reflect mood and desire rather than utility?<br><br>Can computational
       tools be playful, emotional, and ambiguous — not just rational?<br><br>How might this work reflect, critique, or
-      offer alternatives to normative technologies of urban navigation?
+      offer alternatives to normative technologies of urban navigation?<br><br>
+
     </div>
 
     <!-- Keywords section -->
     <div class="project-title">Keywords (6)</div>
     <div class="section-content">Psychogeography<br><br>Urban
-      Experience<br><br>Serendipity<br><br>HCI<br><br>Situationist Mapping<br><br>Algorithmic Imagination</div>
+      Experience<br><br>Serendipity<br><br>HCI<br><br>Situationist Mapping<br><br>Algorithmic Imagination<br><br>
+    </div>
 
     <!-- Intersecting fields section -->
     <div class="project-title">3 Intersecting Fields</div>
     <div class="section-content">Human-Computer Interaction<br><br>Critical Cartography / Urban
-      Theoryy<br><br>Computational Aesthetics + Speculative Design</div>
+      Theoryy<br><br>Computational Aesthetics + Speculative Design<br><br>
+    </div>
 
     <!-- Historical lineage section -->
     <div class="project-title">Historical Lineage</div>
     <div class="section-content">The Situationist International: Guy Debord’s dérive as a method of experiencing space
-      through emotion and chance; détournement as subversion of dominant spatial logic.<br><br>Psychogeographic
-      Cartography: Debord’s Guide Psychogéographique de Paris, counter-maps made by artists and activists.<br><br>Design
+      through emotion and chance; détournement as subversion of dominant spatial logic.<br><br>
+      Psychogeographic
+      Cartography: Debord’s Guide Psychogéographique de Paris, counter-maps made by artists and activists.<br><br>
+      Design
       Fiction & Speculative Interfaces: Dunne & Raby’s Speculative Everything, creating technology not to solve
-      problems, but to ask better questions. Sketchpad marked the birth of computational drawing and the graphic user
+      problems, but to ask better questions.<br><br>
+      Sketchpad marked the birth of computational drawing and the graphic user
       interface, embedding ideas of precision, parametric logic, and user-agency into design software. It introduced the
       computer as a medium for modeling — for encoding geometry, constraints, and control. It laid the groundwork for
       CAD, and by extension, the entire logic of optimization that underpins modern computational design. My project
       emerges from this lineage but turns its assumptions sideways. Where Sketchpad prioritized constraint-solving,
       clarity, and structure, Wanderful seeks ambiguity, subjectivity, and drift. I am not modeling form — I am modeling
-      feeling. My interface is not a precision instrument but a mood tuner.</div>
+      feeling. My interface is not a precision instrument but a mood tuner.<br><br>
+    </div>
 
     <!-- Community of practice section -->
     <div class="project-title">My Community of Practice</div>
@@ -92,7 +102,8 @@
 
       I situate myself as a computational designer who believes maps are rhetorical objects — I am reimagining the
       routing algorithm as a playful, affective, and participatory medium. My audience includes designers, urbanists,
-      and digital users frustrated with the flatness of conventional navigation tools.
+      and digital users frustrated with the flatness of conventional navigation tools.<br><br>
+
 
     </div>
 
@@ -101,7 +112,8 @@
     <div class="section-content">Informed by CDP’s emphasis on design as critique, this project explores how
       computational logic can be turned sideways: toward mood, ambiguity, and experiential pluralism. The dérive becomes
       not just an aesthetic reference, but a computational protocol — replacing cost functions with curiosity, direction
-      with drift.</div>
+      with drift.<br><br>
+    </div>
 
     <!-- Methods section -->
     <div class="project-title">Methods</div>
@@ -116,9 +128,9 @@
 
       Route computation with subjective tuning <br>
 
-      Speculative UI prototyping <br>
+      Speculative UI prototyping <br><br>
 
-      Approach: A hybrid of quantitative metrics and qualitative affective modeling <br>
+      Approach: A hybrid of quantitative metrics and qualitative affective modeling <br><br>
 
       Form: Computational, aesthetic, interactive <br><br>
 
@@ -126,52 +138,60 @@
 
     <!-- Computational design experiments section -->
     <div class="project-title">Computational Design Experiments</div>
-    <div class="section-content">Gradient heatmaps of “fun level” across Manhattan
+    <div class="section-content">Gradient heatmaps of “fun level” across Manhattan<br><br>
 
-      Path visualizations that morph based on sliders like “people density,” “chaos,” and “surprise”
+      Path visualizations that morph based on sliders like “people density,” “chaos,” and “surprise”<br><br>
 
-      Exploration of routing not by shortest time but highest vibe
+      Exploration of routing not by shortest time but highest vibe<br><br>
 
-      Sliders controlling affective preferences (e.g., “familiarity → lost me”)
+      Sliders controlling affective preferences (e.g., “familiarity”)
 
     </div>
 
     <!-- Network Graph Visualization - this is a subsection under Computational Design Experiments -->
     <div class="project-title-subsection">Network Graph Visualization</div>
     <!-- This div will contain the interactive network graph created by JavaScript -->
-    <div id="d3-container-2"></div>
+    <div class="canvas-block" id="d3-container-2">
+      <div id="time-slider-container">
+        <input type="range" min="0" max="47" value="24" id="timeSlider" />
+        <span id="timeLabel">12:00 PM</span>
+      </div>
+    </div>
 
     <!-- Visual representation section -->
     <div class="project-title">Visual Representation</div>
     <div class="section-content">Inspired by Debord’s cut-up maps, layered with color gradient affective
-      fields
+      fields.<br><br>
 
-      Style = speculative UI meets critical cartography
+      Style = speculative UI meets critical cartography.<br><br>
 
-      Representation as argument: route maps not as tools of mastery, but as interfaces of encounter
+      Representation as argument: route maps not as tools of mastery, but as interfaces of encounter.<br><br>
 
-      Aesthetic references: soft navigation (LoVid, Nold), playfully distorted GIS, semi-fictional overlays</div>
+      Aesthetic references: soft navigation (LoVid, Nold), playfully distorted GIS, semi-fictional overlays<br><br>
+    </div>
 
     <!-- Rhetorical argument section -->
     <div class="project-title">Rhetorical Argument</div>
     <div class="section-content">This project argues that we must reclaim maps as tools of
-      imagination.
+      imagination.<br><br>
       If Google Maps tells us how to get there fastest, this tool asks: what if you don’t know where you’re going, only
-      how you want to feel on the way?
-      Wanderful is a rerouting of navigation toward joy, unpredictability, and personal drift — a computational dérive.
+      how you want to feel on the way?<br><br>
+      Wanderful is a rerouting of navigation toward joy, unpredictability, and personal drift — a computational
+      dérive.<br><br>
     </div>
 
     <!-- Capstone project outline section -->
     <div class="project-title">Brief Outline of a Potential Capstone Project</div>
-    <div class="section-content">A working web-based routing interface built on NYC OpenStreetMap data.
+    <div class="section-content">A working web-based routing interface built on NYC OpenStreetMap data.<br><br>
 
-      Allows users to choose start/end and customize their walk by mood.
+      Allows users to choose start/end and customize their walk by mood.<br><br>
 
-      Generates real-time paths colored by serendipity and animated “mood zones”.
+      Generates real-time paths colored by serendipity and animated “mood zones”.<br><br>
 
-      Potential for participatory layer: people annotate streets by emotion.
+      Potential for participatory layer: people annotate streets by emotion.<br><br>
 
-      Output: live map, UI prototype, annotated diagrams, and narrative visualization</div>
+      Output: live map, UI prototype, annotated diagrams, and narrative visualization<br><br>
+    </div>
 
     <!-- The challenge section -->
     <div class="project-title">The Challenge</div>

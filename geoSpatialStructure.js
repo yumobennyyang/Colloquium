@@ -98,7 +98,7 @@ var mapboxSketch = function () {
 
         let rawNoiseData;
 
-        fetch("./public/noise_complaints.geojson")
+        fetch("noise_complaints.geojson")
             .then((response) => response.json())
             .then((data) => {
                 rawNoiseData = data.features.filter(f => f.geometry);
