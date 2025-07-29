@@ -367,6 +367,7 @@ main {
   z-index: 0;
   animation: pulseSun 6s ease-in-out infinite;
   pointer-events: none;
+  filter: brightness(0.95)
 }
 
 @keyframes pulseSun {
