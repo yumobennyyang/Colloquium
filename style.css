@@ -44,7 +44,7 @@ body::before {
   height: 100vh;
   width: 100%;
   z-index: -1;
-  background: rgb(174, 174, 174);
+  background: linear-gradient(180deg, rgb(188, 185, 185) 0%, rgb(170, 162, 162) 50%, rgb(146, 136, 136) 100%);
   animation: bgShift 20s ease infinite;
 }
 
@@ -111,6 +111,7 @@ main {
   max-width: 800px;
   /* Limit the maximum width to 800 pixels */
   margin: 80px auto;
+
 
   margin-bottom: 0px;
 
@@ -213,7 +214,8 @@ main {
 
 /* Style the D3 container for the network graph */
 #d3-container-2 {
-  width: 760px;;
+  width: 760px;
+  ;
   /* Make the container take full width */
   height: 400px;
   /* Set the height to 400 pixels */
@@ -345,4 +347,50 @@ main {
 
 .mapboxgl-ctrl-scale {
   background-color: rgba(255, 255, 255, 0) !important;
+}
+
+
+
+
+#sun {
+  position: fixed;
+  top: 20vh;
+  right: 30vw;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffffff, #fffef8);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px #fffcee,
+    0 0 50px 20px #fffbe6,
+    0 0 100px 40px #fff9cc,
+    0 0 160px 80px rgba(255, 255, 240, 0.6);
+  z-index: 0;
+  animation: pulseSun 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseSun {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px #fffcee,
+      0 0 50px 20px #fffbe6,
+      0 0 100px 40px #fff9cc,
+      0 0 160px 80px rgba(255, 255, 240, 0.6);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px 5px #fffcee,
+      0 0 70px 30px #fffbe6,
+      0 0 120px 60px #fff9cc,
+      0 0 200px 100px rgba(255, 255, 240, 0.8);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px #fffcee,
+      0 0 50px 20px #fffbe6,
+      0 0 100px 40px #fff9cc,
+      0 0 160px 80px rgba(255, 255, 240, 0.6);
+  }
 }
