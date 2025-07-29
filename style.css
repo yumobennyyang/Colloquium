@@ -9,16 +9,46 @@
 /* Style the entire body of the webpage */
 body {
   font-family: 'Roboto', sans-serif;
-  /* Set the font to Roboto, with sans-serif as backup */
-  background-color: #ffffff;
-  /* Set background color to white */
   color: #111;
-  /* Set text color to dark gray (almost black) */
   margin: 0;
-  /* Remove default spacing around the body */
   padding: 0;
-  /* Remove default internal spacing */
 }
+
+
+
+#background,
+#background2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+  max-height: 400px;
+  transform: translateY(30px);
+
+}
+
+
+#background2 {
+  transform: translateY(0px);
+  z-index: -1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  background: rgb(174, 174, 174);
+  animation: bgShift 20s ease infinite;
+}
+
+
 
 /* ============================================================================
    HEADER STYLING
@@ -80,9 +110,16 @@ header .right a {
 main {
   max-width: 800px;
   /* Limit the maximum width to 800 pixels */
-  margin: 60px auto;
-  /* Add 60px top/bottom margin, center horizontally */
-  padding: 0 20px;
+  margin: 80px auto;
+
+  margin-bottom: 0px;
+
+  padding: 16px 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   /* Add 20px left/right padding, no top/bottom */
 }
 
@@ -92,7 +129,7 @@ main {
 
 /* Style the project year/date */
 .project-meta {
-  font-size: 14px;
+  font-size: 16px;
   /* Set font size to 14 pixels */
   color: #999;
   /* Set text color to light gray */
@@ -102,7 +139,7 @@ main {
 
 /* Style the main project title (regular sections) */
 .project-title {
-  font-size: 24px;
+  font-size: 16px;
   /* Set font size to 24 pixels (larger) */
   font-weight: 400;
   /* Set font weight to normal (not bold) */
@@ -114,7 +151,7 @@ main {
 
 /* Style for the main title (Research Foundations + Project Outline) */
 .project-title-main {
-  font-size: 32px;
+  font-size: 28px;
   /* Set font size to 32 pixels (larger than regular titles) */
   font-weight: 400;
   /* Set font weight to normal (not bold) */
@@ -176,7 +213,7 @@ main {
 
 /* Style the D3 container for the network graph */
 #d3-container-2 {
-  width: 100%;
+  width: 760px;;
   /* Make the container take full width */
   height: 400px;
   /* Set the height to 400 pixels */
@@ -184,9 +221,7 @@ main {
   /* Add 20px top/bottom margin */
   margin-left: 20px;
   /* Add 20px left margin (indentation) */
-  border: 1px solid #ddd;
   /* Add a light gray border around the container */
-  border-radius: 4px;
   /* Add slightly rounded corners */
   background-color: #f0f0f0;
   overflow: hidden;
@@ -243,7 +278,11 @@ main {
 }
 
 
-
+.coral-pixels-regular {
+  font-family: "Coral Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 

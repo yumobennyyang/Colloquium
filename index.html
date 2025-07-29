@@ -22,6 +22,14 @@
 
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unica+One&display=swap"
+    rel="stylesheet">
+
+
 
   <!-- Link our CSS file to style the page -->
   <link rel="stylesheet" href="style.css">
@@ -29,49 +37,35 @@
 
 <body>
   <!-- The body contains all the visible content that users will see on the page -->
+  <canvas id="background"></canvas>
+  <canvas id="background2"></canvas>
 
-  <!-- Header section at the top of the page -->
-  <header>
-    <!-- Left side of header - institution name -->
-    <div class="left">Columbia GSAPP</div>
-
-    <!-- Center of header - main title and subtitle -->
-    <div class="center">
-      Computational Design Practices<br>
-      <!-- <br> creates a line break, moving the next text to a new line -->
-      <span>Colloquium 1 Summer 2025</span>
-      <!-- span is an inline element that groups text without creating a new line -->
-    </div>
-
-    <!-- Right side of header - student name -->
-    <div class="right">Benny Yang</div>
-  </header>
 
   <!-- Main content area -->
-  <main>
+  <main class="coral-pixels-regular">
     <!-- Main title of the research project -->
-    <div class="project-title-main">Serendipity Interface: A Rerouting of Downtown Manhattan</div>
-
+    <div class="project-title-main coral-pixels-regular">Serendipity Interface: A Rerouting of Downtown Manhattan</div>
+    <div class="section-content">Benny Yang</div>
     <!-- Research question section -->
-    <div class="project-title">Research question(s)</div>
+    <div class="project-title">Research questions</div>
     <div class="section-content">How might we prioritize serendipity, surprise, and subjectivity over speed and
       efficiency in urban navigation systems?
-      <br><br>What happens when we design maps to reflect mood and desire rather than utility?<br><br>Can computational
-      tools be playful, emotional, and ambiguous — not just rational?<br><br>How might this work reflect, critique, or
+      <br>What happens when we design maps to reflect mood and desire rather than utility?<br>Can computational
+      tools be playful, emotional, and ambiguous — not just rational?<br>How might this reflect, critique, or
       offer alternatives to normative technologies of urban navigation?<br><br>
 
     </div>
 
     <!-- Keywords section -->
-    <div class="project-title">Keywords (6)</div>
-    <div class="section-content">Psychogeography<br><br>Urban
-      Experience<br><br>Serendipity<br><br>HCI<br><br>Situationist Mapping<br><br>Algorithmic Imagination<br><br>
+    <div class="project-title">Keywords</div>
+    <div class="section-content">Psychogeography<br>Urban
+      Exploration<br>Serendipity<br>Cognitive Map<br>Situationist Mapping<br>Algorithmic Imagination<br><br>
     </div>
 
     <!-- Intersecting fields section -->
     <div class="project-title">3 Intersecting Fields</div>
-    <div class="section-content">Human-Computer Interaction<br><br>Critical Cartography / Urban
-      Theoryy<br><br>Computational Aesthetics + Speculative Design<br><br>
+    <div class="section-content">Human-Computer Interaction<br>Critical Cartography / Urban
+      Theoryy<br>Computational Aesthetics + Speculative Design<br><br>
     </div>
 
     <!-- Historical lineage section -->
@@ -88,8 +82,8 @@
       computer as a medium for modeling — for encoding geometry, constraints, and control. It laid the groundwork for
       CAD, and by extension, the entire logic of optimization that underpins modern computational design. My project
       emerges from this lineage but turns its assumptions sideways. Where Sketchpad prioritized constraint-solving,
-      clarity, and structure, Wanderful seeks ambiguity, subjectivity, and drift. I am not modeling form — I am modeling
-      feeling. My interface is not a precision instrument but a mood tuner.<br><br>
+      clarity, and structure, the Serendipity Map seeks ambiguity, subjectivity, and drift. Instead of modeling form, I am
+      modeling feeling. This interface is not a precision instrument but a mood tuner.<br><br>
     </div>
 
     <!-- Community of practice section -->
@@ -102,7 +96,8 @@
 
       I situate myself as a computational designer who believes maps are rhetorical objects — I am reimagining the
       routing algorithm as a playful, affective, and participatory medium. My audience includes designers, urbanists,
-      and digital users frustrated with the flatness of conventional navigation tools.<br><br>
+      and digital users frustrated with the flatness of conventional navigation tools. I want my tool to not be static,
+      but dynamically changing based on the user. It is personalized and unique to each user.<br><br>
 
 
     </div>
@@ -148,8 +143,7 @@
 
     </div>
 
-    <!-- Network Graph Visualization - this is a subsection under Computational Design Experiments -->
-    <div class="project-title-subsection">Network Graph Visualization</div>
+
     <!-- This div will contain the interactive network graph created by JavaScript -->
     <div class="canvas-block" id="d3-container-2">
       <div id="time-slider-container">
@@ -157,6 +151,7 @@
         <span id="timeLabel">12:00 PM</span>
       </div>
     </div>
+    <br>
 
     <!-- Visual representation section -->
     <div class="project-title">Visual Representation</div>
@@ -176,7 +171,7 @@
       imagination.<br><br>
       If Google Maps tells us how to get there fastest, this tool asks: what if you don’t know where you’re going, only
       how you want to feel on the way?<br><br>
-      Wanderful is a rerouting of navigation toward joy, unpredictability, and personal drift — a computational
+      The Serendipity Map is a rerouting of navigation toward joy, unpredictability, and personal drift — a computational
       dérive.<br><br>
     </div>
 
@@ -195,23 +190,33 @@
 
     <!-- The challenge section -->
     <div class="project-title">The Challenge</div>
-    <div class="section-content">Technical: Incorporating subjective, fuzzy values into a routing algorithm.
+    <div class="section-content">Technical: Incorporating subjective, fuzzy values into a routing algorithm.<br><br>
 
-      Data: Finding or simulating fine-grained pedestrian/social data.
+      Data: Finding or simulating fine-grained pedestrian/social data.<br><br>
 
-      Conceptual: Translating psychogeographic theory into computational form without flattening it.
+      Conceptual: Translating psychogeographic theory into computational form without flattening it.<br><br>
 
-      Visual: Balancing abstraction and readability in the output.
+      Visual: Balancing abstraction and readability in the output.<br><br>
 
       Personal Plan: Continue building Grasshopper logic, explore Mapbox interactivity, and collaborate with peers on
-      data annotation layer. Data collection about cognitive distance vs real distance. Iterative prototyping of UI.
+      data annotation layer. Data collection about cognitive distance vs real distance. Iterative prototyping of UI.<br><br>
 
     </div>
+    <br><br><br><br><br><br>
+
+
 
   </main>
 
+
   <!-- Load our JavaScript file that creates the network graph -->
   <script src="geoSpatialStructure.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.3/chroma.min.js"></script>
+  <script src="script.js"></script>
+
 
 </body>
 <!-- End of body - all visible content goes above this line -->
