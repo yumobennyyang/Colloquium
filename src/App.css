@@ -1,0 +1,514 @@
+@font-face {
+  font-family: 'TT Commons Pro';
+  src: url('/TT_Commons_Pro_VF_Trial.ttf') format('truetype');
+  font-weight: 100 900;
+  /* for variable font weight range */
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'TT Commons Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+.light-text {
+  font-weight: 300;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.page {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+  color: black;
+
+}
+
+
+
+.page:nth-child(1) {
+  background: #ccc;
+}
+
+.page:nth-child(2) {
+  background: #ccc;
+}
+
+.page:nth-child(3) {
+  background: #ccc;
+}
+
+.page:nth-child(4) {
+  background: #ccc;
+}
+
+.page:nth-child(5) {
+  background: #ccc;
+}
+
+.page:nth-child(6) {
+  background: #ccc;
+}
+
+.page:nth-child(7) {
+  background: #ccc;
+}
+
+.page:nth-child(8) {
+  background: #ccc;
+}
+
+.page:nth-child(9) {
+  background: #ccc;
+}
+
+.page:nth-child(10) {
+  background: #ccc;
+}
+
+.page:nth-child(11) {
+  background: #ccc;
+}
+
+.page:nth-child(12) {
+  background: #ccc;
+}
+
+.page:nth-child(13) {
+  background: #ccc;
+}
+
+.page:nth-child(14) {
+  background: #ccc;
+}
+
+.page:nth-child(15) {
+  background: #ccc;
+}
+
+
+
+
+
+.page-two {
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.page-with-videos {
+  position: relative;
+
+}
+
+.page-with-videos .FaultyTerminal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Behind the video grid */
+}
+
+.page-with-videos .video-grid {
+  position: relative;
+  z-index: 1;
+  /* Above the FaultyTerminal */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  /* Adjust as needed */
+  padding: 16px;
+}
+
+.page-with-videos .video-grid video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+
+}
+
+.faulty-terminal-container {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  filter: blur(0px);
+}
+
+.video-text-1 {
+  position: absolute;
+  width: 60%;
+  top: 100px;
+  text-align: center;
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: white;
+  z-index: 100;
+
+}
+
+
+.video-text-2 {
+  position: absolute;
+  width: 60%;
+  bottom: 100px;
+  text-align: center;
+  font-family: 'TT Commons Pro', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: white;
+  z-index: 100;
+
+}
+
+
+
+
+
+.framework-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  max-width: 800px;
+}
+
+.framework-title {
+
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  max-width: 800px;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.circle-text {
+  color: white;
+  transform: translateY(-20px);
+  font-size: 16px;
+}
+
+
+
+.simple-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-text {
+  max-width: 800px;
+  margin: 0;
+  /* Remove default margin to avoid gap */
+
+  padding-top: 150px
+}
+
+.page-image {
+  padding-top: 32px;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-top: 0;
+  /* Ensures no gap between text and image */
+}
+
+
+
+.questions {
+  padding: 200px
+}
+
+.questions h1 {
+  font-size: 40px;
+}
+
+
+
+.map-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.map-container {
+  position: relative;
+}
+
+.map-image {
+  width: 500px;
+  /* adjust according to your image dimensions */
+  height: auto;
+}
+
+.label {
+  position: absolute;
+}
+
+/* Position each label according to your image endpoints */
+.psychogeography {
+  bottom: 25%;
+  left: 0%;
+  transform: translate(-45%, -50%);
+}
+
+.urban-exploration {
+  bottom: 25%;
+  right: 0%;
+  transform: translate(46%, -50%);
+}
+
+.serendipity {
+  top: 25%;
+  right: 0%;
+  transform: translate(15%, -35%);
+}
+
+.cognitive-map {
+  top: 25%;
+  left: 0%;
+  transform: translate(-33%, -35%);
+}
+
+.situationist-mapping {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.algorithmic-imagination {
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+
+
+.responsive-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-rectangle {
+  width: 80%;
+  height: 60%;
+  background-image: url('./public/rectangle.png');
+  background-size: 100% 100%;
+  /* Stretch to fill rectangle */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phrase-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+}
+
+.phrase {
+  color: black;
+  text-align: center;
+}
+
+
+
+.precedent-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.precedent-container {
+  width: 80%;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.precedent-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.precedent-label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.precedent-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+
+
+
+.canvas-block {
+  width: 60%;
+  height: 400px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  background-color: #fff;
+
+}
+
+
+#d3-container-2 {
+  position: relative;
+  height: 430px;
+  clip-path: inset(0px 0px 30px 0px);
+  margin-bottom: -24px;
+}
+
+
+/* Time slider styling */
+#time-slider-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 0px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+
+#time-slider-container input[type="range"] {
+  appearance: none;
+  width: 160px;
+  height: 2.5px;
+  background: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#time-slider-container input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background: black;
+  border-radius: 50%;
+  border: none;
+}
+
+#time-slider-container input[type="range"]::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background: black;
+  border-radius: 50%;
+  border: none;
+}
+
+#time-slider-container span {
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+}
+
+.mapboxgl-ctrl-scale {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+
+
+.noise-image {
+  width: 60%;
+}
+
+
+
+.grasshopper-image {
+  width: 50%;
+}

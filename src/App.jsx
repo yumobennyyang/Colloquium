@@ -1,0 +1,258 @@
+import { useState } from 'react'
+import React from 'react'
+import SplitText from './components/SplitText.jsx'
+import FaultyTerminal from './components/FaultyTerminal.jsx'
+
+
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+
+
+
+
+    <div className="container">
+      <div className="page">
+        <h2>
+          <span className="bold-text">Toward an Empathetic Interface:</span> Serendipity as Mapping Systems
+        </h2>
+      </div>
+
+      <div className="page">
+
+        <SplitText
+          text="The history of HCI is a story of increasing intimacy — from visual feedback, to sound, touch, and now: contextual understanding."
+          className="page-two"
+          delay={60}
+          duration={1}
+          ease="power3.out"
+          splitType="words"
+
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          textAlign="center"
+          onLetterAnimationComplete={() => {
+            console.log("Animation complete");
+          }
+          }
+        />
+
+      </div>
+      <div className="page">
+
+
+
+
+        <div className="page page-with-videos">
+
+          <FaultyTerminal
+            scale={1.8}
+            gridMul={[1.8, 1]}
+            digitSize={1.2}
+            timeScale={1}
+            pause={false}
+            scanlineIntensity={1}
+            glitchAmount={1}
+            flickerAmount={1}
+            noiseAmp={1}
+            chromaticAberration={0}
+            dither={0}
+            curvature={0}
+            tint="#292E28"
+            mouseReact={true}
+            mouseStrength={1}
+            pageLoadAnimation={false}
+            brightness={1}
+          />
+
+          <div className="video-grid">
+            <video src="./public/sketchpad1.mp4" autoPlay loop muted playsInline />
+            <video src="./public/sketchpad2.mp4" autoPlay loop muted playsInline />
+            <video src="./public/sketchpad3.mp4" autoPlay loop muted playsInline />
+            <video src="./public/sketchpad4.mp4" autoPlay loop muted playsInline />
+          </div>
+          <div className="video-text-1">Sketchpad: Control, Precision, and the Birth of Visual Computing</div>
+          <div className="video-text-2">Ivan Sutherland introduced constraint-based modeling, parametric logic, and graphical feedback — foundations of modern CAD and UI/UX systems.</div>
+
+        </div>
+      </div>
+
+      <div className="page">
+
+        <div className="page framework-page">
+          <h2 className="framework-title"> I am building a framework for contextual computing —<br></br>where the system knows:</h2>
+          <div className="circle-container">
+            <div className="circle" style={{ backgroundImage: 'url(./public/rectangle-1.png)' }}>
+              <h2 className="circle-text">where you are</h2>
+            </div>
+            <div className="circle" style={{ backgroundImage: 'url(./public/rectangle-2.png)' }}>
+              <h2 className="circle-text">who you are</h2>
+            </div>
+            <div className="circle" style={{ backgroundImage: 'url(./public/rectangle-3.png)' }}>
+              <h2 className="circle-text">what you want</h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div className="page">
+
+
+        <div className="page simple-page">
+          <div className="content-container">
+            <h2 className="page-text">The Serendipity Map is a routing system designed for exploration rather than efficiency. It analyzes urban mood, understands your social preference, and computes a path that feels right.</h2>
+            <img src="./public/mockup.png" alt="mockup" className="page-image" ></img>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div className="page">
+
+        <div className="questions">
+          <h1>Can a system not only respond, but empathize? Not just compute, but suggest?
+            <br></br><br></br>
+            How do we reflect, critique, or offer alternatives to normative technologies of urban navigation?
+            <br></br><br></br>
+            How might we design interfaces that foster empathy between users and their environments?</h1>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+      <div className="page">
+
+        <div className="page map-page">
+          <div className="map-container">
+            <img src="./public/keywords.png" alt="Map Diagram" className="map-image" />
+            <h2 className="label psychogeography">Psychogeography</h2>
+            <h2 className="label urban-exploration">Urban Exploration</h2>
+            <h2 className="label serendipity">Serendipity</h2>
+            <h2 className="label cognitive-map">Cognitive Map</h2>
+            <h2 className="label situationist-mapping">Situationist Mapping</h2>
+            <h2 className="label algorithmic-imagination">Algorithmic Imagination</h2>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div className="page">
+
+        <div className="responsive-rectangle">
+          <div className="phrase-container">
+            <h2 className="phrase">Human-Computer<br></br>Interaction</h2>
+            <h2 className="phrase">Critical Cartography/<br></br>Urban Theory</h2>
+            <h2 className="phrase">Computational Aesthetics +<br></br>Speculative Design</h2>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div className="page">
+
+        <div className="precedent-page">
+          <div className="precedent-container">
+            <div className="precedent-item">
+              <h2 className="precedent-label">Guy Debord’s – Dérive</h2>
+              <img src="./public/map1.png" alt="Dérive" />
+            </div>
+            <div className="precedent-item">
+              <h2 className="precedent-label">Christian Nold – Emotional Cartography</h2>
+              <img src="./public/map2.png" alt="Emotional Cartography" />
+            </div>
+            <div className="precedent-item">
+              <h2 className="precedent-label">Dennis Wood – Narrative Atlas</h2>
+              <img src="./public/map3.png" alt="Narrative Atlas" />
+            </div>
+            <div className="precedent-item">
+              <h2 className="precedent-label">Kate McLean – Smellwalks</h2>
+              <img src="./public/map4.png" alt="Smellwalks" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="page">
+        <h3>
+          Software: Rhino, Grasshopper, Mapbox, OpenStreetMap
+          <br></br><br></br>
+          Data: Program types, street attributes, public space, pedestrian density
+          <br></br><br></br>
+          Processes:
+          Serendipity scoring (street segments as mood data)
+          Route computation with subjective tuning
+          Speculative UI prototyping
+          <br></br><br></br>
+          Approach: A hybrid of quantitative metrics and qualitative affective modeling
+          <br></br><br></br>
+          Form: Computational, aesthetic, interactive
+        </h3>
+      </div>
+
+
+      <div className="page">
+
+        <h3>
+          1. Social Attractions<br></br>
+          Cafes, Stores, Galleries
+          <br></br><br></br>
+          2. Temporal Layers<br></br>
+          Potential for events
+          <br></br><br></br>
+          3. Noise Level & Number of pedestrians<br></br>
+          Lively or Serene
+          <br></br><br></br>
+          4. Openness of street / Field of view<br></br>
+          How many buildings are you close to
+          <br></br><br></br>
+          5. Visibility of stores<br></br>
+          From how many angles can each storefront be seen
+        </h3>
+      </div>
+
+      <div className="page">
+        {/* <div className="canvas-block" id="d3-container-2">
+          <div id="time-slider-container">
+            <input type="range" min="0" max="47" value="24" id="timeSlider" />
+            <span id="timeLabel">12:00 PM</span>
+          </div>
+        </div> */}
+
+        <img src="./public/noise.png" alt="Noise" className="noise-image" ></img>
+      </div>
+
+
+
+      <div className="page">
+
+
+        <img src="./public/grasshopper.png" alt="Grasshopper" className="grasshopper-image" ></img>
+      </div>
+
+
+
+    </div >
+
+
+
+
+  )
+}
+
+export default App
