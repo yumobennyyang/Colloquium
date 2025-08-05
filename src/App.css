@@ -26,6 +26,7 @@ h2 {
   font-family: 'TT Commons Pro', sans-serif;
   font-weight: 400;
   font-size: 24px;
+  z-index: 1;
 }
 
 h3 {
@@ -48,9 +49,11 @@ h3 {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+
 }
 
 .page {
+  position:relative;
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
@@ -59,6 +62,7 @@ h3 {
   font-size: 4rem;
   font-family: sans-serif;
   color: black;
+  scroll-snap-stop:always;
 
 }
 
@@ -73,7 +77,7 @@ h3 {
 }
 
 .page:nth-child(3) {
-  background: #ccc;
+  background: #000;
 }
 
 .page:nth-child(4) {
@@ -126,6 +130,12 @@ h3 {
 
 
 
+.dot {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 0;
+}
 
 
 .page-two {
@@ -136,7 +146,7 @@ h3 {
 
 .page-with-videos {
   position: relative;
-
+background: #000 !important;
 }
 
 .page-with-videos .FaultyTerminal {
@@ -212,7 +222,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #f9f9f9;
   max-width: 800px;
 }
 

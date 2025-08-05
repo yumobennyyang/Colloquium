@@ -2,12 +2,66 @@ import { useState } from 'react'
 import React from 'react'
 import SplitText from './components/SplitText.jsx'
 import FaultyTerminal from './components/FaultyTerminal.jsx'
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 
 import './App.css'
 
+
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const dot = document.getElementById('dot');
+
+    const container = document.querySelector('.container');
+    const trigger = document.querySelector('.page:nth-child(2)');
+
+    if (!dot || !container || !trigger) return;
+
+    // Required for custom scroller containers
+    ScrollTrigger.scrollerProxy(container, {
+      scrollTop(value) {
+        if (arguments.length) {
+          container.scrollTop = value;
+        }
+        return container.scrollTop;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      },
+      pinType: container.style.transform ? "transform" : "fixed"
+    });
+
+    // Set default scroller to your container
+    ScrollTrigger.defaults({ scroller: container });
+
+    // Your animation
+    gsap.to(dot, {
+      y: '-150px',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: trigger,
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+        markers: false, // Optional for debugging
+      },
+    });
+
+    // Refresh ScrollTrigger after setup
+    ScrollTrigger.refresh();
+  }, []);
+
 
   return (
 
@@ -16,8 +70,10 @@ function App() {
 
     <div className="container">
       <div className="page">
-        <h2>
-          <span className="bold-text">Toward an Empathetic Interface:</span> Serendipity as Mapping Systems
+
+        <img src="/dot.png" alt="dot" className="dot" id="dot" ></img>
+        <h2 className="">
+          <span className="bold-text title-screen" id="title-screen">towards an empathetic interface &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; serendipity as mapping systems</span>
         </h2>
       </div>
 
@@ -34,7 +90,7 @@ function App() {
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
-          textAlign="center"
+          textAlign="left"
           onLetterAnimationComplete={() => {
             console.log("Animation complete");
           }
@@ -49,7 +105,7 @@ function App() {
 
         <div className="page page-with-videos">
 
-          <FaultyTerminal
+          {/* <FaultyTerminal
             scale={1.8}
             gridMul={[1.8, 1]}
             digitSize={1.2}
@@ -67,7 +123,7 @@ function App() {
             mouseStrength={1}
             pageLoadAnimation={false}
             brightness={1}
-          />
+          /> */}
 
           <div className="video-grid">
             <video src="./public/sketchpad1.mp4" autoPlay loop muted playsInline />

@@ -28,7 +28,6 @@ const SplitText = ({
 
     const el = ref.current;
 
-    
     animationCompletedRef.current = false;
 
     const absoluteLines = splitType === "lines";
@@ -67,6 +66,13 @@ const SplitText = ({
       return;
     }
 
+    // Apply the initial 'from' state immediately to prevent flash
+    gsap.set(targets, { 
+      ...from, 
+      immediateRender: true,
+      force3D: true 
+    });
+
     targets.forEach((t) => {
       t.style.willChange = "transform, opacity";
     });
@@ -82,13 +88,21 @@ const SplitText = ({
       scrollTrigger: {
         trigger: el,
         start,
-        toggleActions: "play none none none",
-        once: true,
+        toggleActions: "play reverse play reverse",
+        once: false,
         scroller: document.querySelector('.container'),
         invalidateOnRefresh: false,
         markers: false,
         onToggle: (self) => {
           scrollTriggerRef.current = self;
+        },
+        onLeave: () => {
+          // Reset to initial state when leaving the trigger area
+          gsap.set(targets, { ...from, immediateRender: true });
+        },
+        onEnterBack: () => {
+          // Reset to initial state when entering back
+          gsap.set(targets, { ...from, immediateRender: true });
         },
       },
       smoothChildTiming: true,
@@ -103,7 +117,7 @@ const SplitText = ({
       },
     });
 
-    tl.set(targets, { ...from, immediateRender: false, force3D: true });
+    // Don't set the 'from' state again since we already did it above
     tl.to(targets, {
       ...to,
       duration,
