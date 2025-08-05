@@ -35,7 +35,6 @@ h3 {
   font-size: 16px;
 }
 
-
 .light-text {
   font-weight: 300;
 }
@@ -49,11 +48,13 @@ h3 {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-
+  /* Add a base background that will be animated */
+  background-color: #ccc;
+  position: relative;
 }
 
 .page {
-  position:relative;
+  position: relative;
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
@@ -62,73 +63,88 @@ h3 {
   font-size: 4rem;
   font-family: sans-serif;
   color: black;
-  scroll-snap-stop:always;
+  scroll-snap-stop: always;
+  /* Remove individual background colors since we're using the container background */
 
+}
+
+.page-child {
+  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: sans-serif;
+  color: black;
+  scroll-snap-stop: always;
+  /* Remove individual background colors since we're using the container background */
+  background: transparent;
 }
 
 
 
+/* Remove all the individual page background colors */
 .page:nth-child(1) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(2) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(3) {
-  background: #000;
+  /* background: #000; - removed */
 }
 
 .page:nth-child(4) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(5) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(6) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(7) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(8) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(9) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(10) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(11) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(12) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(13) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(14) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
 
 .page:nth-child(15) {
-  background: #ccc;
+  /* background: #ccc; - removed */
 }
-
-
 
 .dot {
   position: absolute;
@@ -137,7 +153,6 @@ h3 {
   z-index: 0;
 }
 
-
 .page-two {
   font-family: 'TT Commons Pro', sans-serif;
   font-weight: 600;
@@ -145,38 +160,41 @@ h3 {
 }
 
 .page-with-videos {
-  position: relative;
-background: #000 !important;
-}
-
-.page-with-videos .FaultyTerminal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   height: 100%;
-  z-index: 0;
-  /* Behind the video grid */
+  gap: 32px;
 }
 
-.page-with-videos .video-grid {
-  position: relative;
-  z-index: 1;
-  /* Above the FaultyTerminal */
+.video-text {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 600px;
+  color: white;
+  z-index: 10;
+  font-family: 'TT Commons Pro', sans-serif;
+}
+
+.video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 16px;
-  /* Adjust as needed */
-  padding: 16px;
+  grid-gap: 12px 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 600px;
+  mix-blend-mode: screen;
+  z-index: 5;
 }
 
-.page-with-videos .video-grid video {
+.video-grid video {
   width: 100%;
   height: auto;
   object-fit: cover;
-
-
 }
+
 
 .faulty-terminal-container {
   width: 100vw;
@@ -185,36 +203,6 @@ background: #000 !important;
   overflow: hidden;
   filter: blur(0px);
 }
-
-.video-text-1 {
-  position: absolute;
-  width: 60%;
-  top: 100px;
-  text-align: center;
-  font-family: 'TT Commons Pro', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  color: white;
-  z-index: 100;
-
-}
-
-
-.video-text-2 {
-  position: absolute;
-  width: 60%;
-  bottom: 100px;
-  text-align: center;
-  font-family: 'TT Commons Pro', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  color: white;
-  z-index: 100;
-
-}
-
-
-
 
 
 .framework-page {
@@ -226,7 +214,6 @@ background: #000 !important;
 }
 
 .framework-title {
-
   margin-bottom: 16px;
   padding-bottom: 16px;
   padding-top: 16px;
@@ -236,28 +223,10 @@ background: #000 !important;
 .circle-container {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 8px;
+  padding-top: 16px;
 }
 
-.circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-}
-
-.circle-text {
-  color: white;
-  transform: translateY(-20px);
-  font-size: 16px;
-}
 
 
 
@@ -278,7 +247,6 @@ background: #000 !important;
   max-width: 800px;
   margin: 0;
   /* Remove default margin to avoid gap */
-
   padding-top: 150px
 }
 
@@ -291,8 +259,6 @@ background: #000 !important;
   /* Ensures no gap between text and image */
 }
 
-
-
 .questions {
   padding: 200px
 }
@@ -300,8 +266,6 @@ background: #000 !important;
 .questions h1 {
   font-size: 40px;
 }
-
-
 
 .map-page {
   display: flex;
@@ -361,8 +325,6 @@ background: #000 !important;
   transform: translate(-50%, -60%);
 }
 
-
-
 .responsive-page {
   height: 100vh;
   display: flex;
@@ -370,33 +332,61 @@ background: #000 !important;
   align-items: center;
 }
 
+
+.parallax-image {
+  position: absolute;
+  top: 38%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: fill;
+  /* Stretch without preserving aspect ratio */
+  /* Center vertically */
+  z-index: 0;
+  will-change: transform;
+
+}
+
 .responsive-rectangle {
   width: 80%;
   height: 60%;
-  background-image: url('./public/rectangle.png');
-  background-size: 100% 100%;
-  /* Stretch to fill rectangle */
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+
 .phrase-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* equal space between boxes */
   align-items: center;
-  width: 80%;
-  padding: 20px;
+  width: 100%; /* fill full width of .responsive-rectangle */
+  padding: 10%;
+  gap: 8px; /* optional: controls space between items */
+  z-index: 1;
 }
+
+.phrase-box {
+
+  /* ensures equal width for all boxes */
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  z-index: 1;
+}
+
 
 .phrase {
   color: black;
-  text-align: center;
+  text-align: left;
+  white-space: pre-wrap;
+  /* ← this makes \n work as a line break */
+  word-break: break-word;
+
 }
-
-
 
 .precedent-page {
   display: flex;
@@ -424,6 +414,7 @@ background: #000 !important;
   font-size: 16px;
   margin-bottom: 8px;
   text-align: center;
+  text-wrap: nowrap;
 }
 
 .precedent-item img {
@@ -433,21 +424,13 @@ background: #000 !important;
   display: block;
 }
 
-
-
-
-
-
-
 .canvas-block {
   width: 60%;
   height: 400px;
   margin-bottom: 6px;
   overflow: hidden;
   background-color: #fff;
-
 }
-
 
 #d3-container-2 {
   position: relative;
@@ -455,7 +438,6 @@ background: #000 !important;
   clip-path: inset(0px 0px 30px 0px);
   margin-bottom: -24px;
 }
-
 
 /* Time slider styling */
 #time-slider-container {
@@ -510,13 +492,9 @@ background: #000 !important;
   background-color: rgba(255, 255, 255, 0) !important;
 }
 
-
-
 .noise-image {
   width: 60%;
 }
-
-
 
 .grasshopper-image {
   width: 50%;
