@@ -80,7 +80,7 @@ function App() {
         start: 'top bottom',
         end: 'bottom top',
         scrub: true,
-        markers: true,
+        markers: false,
         scroller: container,
         onUpdate: (self) => {
           console.log('Background animation progress:', self.progress);
@@ -93,6 +93,126 @@ function App() {
 
     tl.to(container, { backgroundColor: '#000000', duration: 0.5 }) // from top bottom to top top
       .to(container, { backgroundColor: '#cccccc', duration: 0.5 }); // from top top to bottom top
+
+
+    // Enter animations for multiple elements
+    const animatedElements = document.querySelectorAll('.framework-title, .page-text, video-text, .label, .precedent-1, .video-1, .tilted-card-1');
+    animatedElements.forEach((element) => {
+      if (element) {
+        // Set initial state
+        gsap.set(element, { y: 40, opacity: 0 });
+
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            scroller: container,
+            markers: false,
+          },
+        });
+      }
+    });
+
+
+
+    const rotationElements = document.querySelectorAll('.map-image');
+    rotationElements.forEach((element) => {
+      if (element) {
+        // Set initial state
+        gsap.set(element, { y: 40, opacity: 0, rotation: 100 });
+
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          duration: 1,
+          ease: 'elastic.out(0.1,0.8)',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            scroller: container,
+            markers: false,
+          },
+        });
+      }
+    });
+
+
+
+
+    const animated47 = document.querySelectorAll('.precedent-2, .video-2 ');
+    animated47.forEach((element) => {
+      if (element) {
+        // Set initial state
+        gsap.set(element, { y: 47, opacity: 0 });
+
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            scroller: container,
+            markers: false,
+          },
+        });
+      }
+    });
+
+
+    const animated53 = document.querySelectorAll('.precedent-3, .video-3, .tilted-card-2');
+    animated53.forEach((element) => {
+      if (element) {
+        // Set initial state
+        gsap.set(element, { y: 53, opacity: 0 });
+
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            scroller: container,
+            markers: false,
+          },
+        });
+      }
+    });
+
+
+    const animatedVisuals = document.querySelectorAll('.circle-container, .page-image, .precedent-4, .video-4, .tilted-card-3, .diagram-image ');
+    animatedVisuals.forEach((element) => {
+      if (element) {
+        // Set initial state
+        gsap.set(element, { y: 60, opacity: 0 });
+
+        gsap.to(element, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            scroller: container,
+            markers: false,
+          },
+        });
+      }
+    });
 
 
 
@@ -181,24 +301,26 @@ function App() {
           /> */}
 
           <h2 className="video-text">
-            With Sketchpad, Ivan Sutherland introduced constraint-based modeling, parametric logic, and graphical feedback — foundations of modern CAD and UI/UX systems.
+            Ivan Sutherland introduced constraint-based modeling, parametric logic, and graphical feedback. Sketchpad became the foundation of modern CAD and UI/UX systems.
           </h2>
 
           <div className="video-grid">
-            <video src="./public/sketchpad1.mp4" autoPlay loop muted playsInline />
-            <video src="./public/sketchpad2.mp4" autoPlay loop muted playsInline />
-            <video src="./public/sketchpad3.mp4" autoPlay loop muted playsInline />
-            <video src="./public/sketchpad4.mp4" autoPlay loop muted playsInline />
+            <video src="./public/sketchpad1.mp4" autoPlay loop muted playsInline className="video-1" />
+            <video src="./public/sketchpad2.mp4" autoPlay loop muted playsInline className="video-2" />
+            <video src="./public/sketchpad3.mp4" autoPlay loop muted playsInline className="video-3" />
+            <video src="./public/sketchpad4.mp4" autoPlay loop muted playsInline className="video-4" />
           </div>
+
         </div>
       </div>
 
       <div className="page">
         <div className="page-child framework-page">
-          <h2 className="framework-title"> I am building a framework for contextual computing —<br></br>where the system knows:</h2>
+          <h1 className="framework-title"> I am building a framework for contextual computing - where the system knows:</h1>
           <div className="circle-container">
             <TiltedCard
               imageSrc="./public/rectangle-1.png"
+              className="tilted-card-1"
               altText="where you are"
               captionText="where you are"
               containerHeight="260px"
@@ -215,8 +337,11 @@ function App() {
                   where you are
                 </p>
               }
-            />            <TiltedCard
+            />
+
+            <TiltedCard
               imageSrc="./public/rectangle-2.png"
+              className="tilted-card-2"
               altText="where you are"
               captionText="where you are"
               containerHeight="260px"
@@ -233,8 +358,11 @@ function App() {
                   who you are
                 </p>
               }
-            />            <TiltedCard
+            />
+
+            <TiltedCard
               imageSrc="./public/rectangle-3.png"
+              className="tilted-card-3"
               altText="where you are"
               captionText="where you are"
               containerHeight="260px"
@@ -264,7 +392,7 @@ function App() {
 
         </div>
         <div className="page-child simple-page">
-          <FluidGlass
+          {/* <FluidGlass
             mode="lens" // or "bar", "cube"
             lensProps={{
               scale: 0.25,
@@ -273,7 +401,7 @@ function App() {
               chromaticAberration: 0.1,
               anisotropy: 0.01
             }}
-          />
+          /> */}
           <div className="content-container">
             <h2 className="page-text">The Serendipity Map is a routing system designed for exploration rather than efficiency. It analyzes urban mood, understands your social preference, and computes a path that feels right.</h2>
             <img src="./public/mockup.png" alt="mockup" className="page-image" ></img>
@@ -330,8 +458,8 @@ function App() {
             >
               <VariableProximity
                 label={'Critical Cartography'}
-                className={'variable-proximity-demo phrase'}
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                className={'variable-proximity-demo phrase phrase-1'}
+                fromFontVariationSettings="'wght' 500, 'opsz' 9"
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"
                 containerRef={containerRef}
                 radius={100}
@@ -346,8 +474,8 @@ function App() {
             >
               <VariableProximity
                 label={'Computational Aesthetics'}
-                className={'variable-proximity-demo phrase'}
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                className={'variable-proximity-demo phrase phrase-2'}
+                fromFontVariationSettings="'wght' 500, 'opsz' 9"
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"
                 containerRef={containerRef}
                 radius={100}
@@ -363,8 +491,8 @@ function App() {
             >
               <VariableProximity
                 label={'Speculative Design'}
-                className={'variable-proximity-demo phrase'}
-                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                className={'variable-proximity-demo phrase phrase-3'}
+                fromFontVariationSettings="'wght' 500, 'opsz' 9"
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"
                 containerRef={containerRef}
                 radius={100}
@@ -384,20 +512,20 @@ function App() {
       <div className="page">
         <div className="precedent-page">
           <div className="precedent-container">
-            <div className="precedent-item">
+            <div className="precedent-item precedent-1">
               <h2 className="precedent-label">Guy Debord's – Dérive</h2>
               <img src="./public/map1.png" alt="Dérive" />
 
             </div>
-            <div className="precedent-item">
+            <div className="precedent-item precedent-2">
               <h2 className="precedent-label">Christian Nold – Emotional Cartography</h2>
               <img src="./public/map2.png" alt="Emotional Cartography" />
             </div>
-            <div className="precedent-item">
+            <div className="precedent-item precedent-3">
               <h2 className="precedent-label">Dennis Wood – Narrative Atlas</h2>
               <img src="./public/map3.png" alt="Narrative Atlas" />
             </div>
-            <div className="precedent-item">
+            <div className="precedent-item precedent-4">
               <h2 className="precedent-label">Kate McLean – Smellwalks</h2>
               <img src="./public/map4.png" alt="Smellwalks" />
             </div>
@@ -406,23 +534,10 @@ function App() {
       </div>
 
       <div className="page">
-        <h3>
-          Software: Rhino, Grasshopper, Mapbox, OpenStreetMap
-          <br></br><br></br>
-          Data: Program types, street attributes, public space, pedestrian density
-          <br></br><br></br>
-          Processes:
-          Serendipity scoring (street segments as mood data)
-          Route computation with subjective tuning
-          Speculative UI prototyping
-          <br></br><br></br>
-          Approach: A hybrid of quantitative metrics and qualitative affective modeling
-          <br></br><br></br>
-          Form: Computational, aesthetic, interactive
-        </h3>
+        <img src="./public/diagram.png" alt="diagram" className="diagram-image" />
       </div>
 
-      <div className="page">
+      {/* <div className="page">
         <h3>
           1. Social Attractions<br></br>
           Cafes, Stores, Galleries
@@ -439,17 +554,20 @@ function App() {
           5. Visibility of stores<br></br>
           From how many angles can each storefront be seen
         </h3>
-      </div>
+      </div> */}
 
       <div className="page">
-        {/* <div className="canvas-block" id="d3-container-2">
+
+
+        <img src="./public/noise.png" alt="Noise" className="noise-image" ></img>
+
+        <div class="canvas-block" id="mapbox-container-1">
           <div id="time-slider-container">
             <input type="range" min="0" max="47" value="24" id="timeSlider" />
             <span id="timeLabel">12:00 PM</span>
           </div>
-        </div> */}
+        </div>
 
-        <img src="./public/noise.png" alt="Noise" className="noise-image" ></img>
       </div>
 
       <div className="page">

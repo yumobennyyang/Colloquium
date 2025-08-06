@@ -153,6 +153,10 @@ h3 {
   z-index: 0;
 }
 
+.title-screen{
+  font-weight: 500;
+}
+
 .page-two {
   font-family: 'TT Commons Pro', sans-serif;
   font-weight: 600;
@@ -172,10 +176,13 @@ h3 {
 .video-text {
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 600px;
+  margin: 0px;
+  margin-left: 6px;
+  max-width: 540px;
   color: white;
   z-index: 10;
   font-family: 'TT Commons Pro', sans-serif;
+  text-align: left;
 }
 
 .video-grid {
@@ -184,7 +191,7 @@ h3 {
   grid-gap: 12px 8px;
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 600px;
+  max-width: 540px;
   mix-blend-mode: screen;
   z-index: 5;
 }
@@ -210,7 +217,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .framework-title {
@@ -218,6 +225,7 @@ h3 {
   padding-bottom: 16px;
   padding-top: 16px;
   max-width: 800px;
+  font-size: 32px;
 }
 
 .circle-container {
@@ -244,7 +252,7 @@ h3 {
 }
 
 .page-text {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0;
   /* Remove default margin to avoid gap */
   padding-top: 150px
@@ -282,47 +290,174 @@ h3 {
   width: 500px;
   /* adjust according to your image dimensions */
   height: auto;
+  /* animation: float-six-image 4s linear infinite; */
 }
+
 
 .label {
   position: absolute;
+  font-weight: 500;
 }
+
+
+
+@keyframes float-psychogeography {
+
+  0%,
+  100% {
+    transform: translate(-45%, -50%) translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(-45%, -50%) translateY(-4px) rotate(0.3deg);
+  }
+
+  66% {
+    transform: translate(-45%, -50%) translateY(2px) rotate(-0.2deg);
+  }
+}
+
+@keyframes float-urban-exploration {
+
+  0%,
+  100% {
+    transform: translate(46%, -50%) translateY(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(46%, -50%) translateY(-6px) rotate(-0.4deg);
+  }
+
+  75% {
+    transform: translate(46%, -50%) translateY(4px) rotate(0.3deg);
+  }
+}
+
+@keyframes float-serendipity {
+
+  0%,
+  100% {
+    transform: translate(15%, -35%) translateY(0px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(15%, -35%) translateY(-2px) rotate(0.5deg);
+  }
+
+  80% {
+    transform: translate(15%, -35%) translateY(6px) rotate(-0.1deg);
+  }
+}
+
+@keyframes float-cognitive-map {
+
+  0%,
+  100% {
+    transform: translate(-33%, -35%) translateY(0px) rotate(0deg);
+  }
+
+  30% {
+    transform: translate(-33%, -35%) translateY(4px) rotate(0.2deg);
+  }
+
+  70% {
+    transform: translate(-33%, -35%) translateY(-4px) rotate(-0.4deg);
+  }
+}
+
+@keyframes float-situationist-mapping {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0%) translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-50%, 0%) translateY(5px) rotate(0.6deg);
+  }
+
+  80% {
+    transform: translate(-50%, 0%) translateY(2px) rotate(-0.3deg);
+  }
+}
+
+@keyframes float-algorithmic-imagination {
+
+  0%,
+  100% {
+    transform: translate(-50%, -60%) translateY(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(-50%, -60%) translateY(2px) rotate(-0.3deg);
+  }
+
+  50% {
+    transform: translate(-50%, -60%) translateY(-2px) rotate(0.4deg);
+  }
+
+}
+
+@keyframes float-six-image {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(1px) rotate(-0.6deg);
+  }
+
+  60% {
+    transform: translateY(-2px) rotate(0.3deg);
+  }
+
+}
+
+
 
 /* Position each label according to your image endpoints */
 .psychogeography {
   bottom: 25%;
   left: 0%;
   transform: translate(-45%, -50%);
+  animation: float-psychogeography 4s linear infinite;
 }
 
 .urban-exploration {
   bottom: 25%;
   right: 0%;
   transform: translate(46%, -50%);
+  animation: float-urban-exploration 4s linear infinite;
 }
 
 .serendipity {
   top: 25%;
   right: 0%;
   transform: translate(15%, -35%);
+  animation: float-serendipity 4s linear infinite;
 }
 
 .cognitive-map {
   top: 25%;
   left: 0%;
   transform: translate(-33%, -35%);
+  animation: float-cognitive-map 4s linear infinite;
 }
 
 .situationist-mapping {
   top: 5%;
   left: 50%;
   transform: translate(-50%, 0%);
+  animation: float-situationist-mapping 4s linear infinite;
 }
 
 .algorithmic-imagination {
   bottom: 5%;
   left: 50%;
   transform: translate(-50%, -60%);
+  animation: float-algorithmic-imagination 4s linear infinite;
 }
 
 .responsive-page {
@@ -330,6 +465,65 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+
+
+.phrase-1{
+  animation: float-phrase-1 7s linear infinite;
+}
+
+@keyframes float-phrase-1 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(-5px) rotate(-0.2deg);
+  }
+
+  60% {
+    transform: translateY(4px) rotate(0.2deg);
+  }
+}
+
+.phrase-2 {
+  animation: float-phrase-2 6s linear infinite;
+}
+
+@keyframes float-phrase-2 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(4px) rotate(-0.2deg);
+  }
+
+  60% {
+    transform: translateY(-6px) rotate(0.1deg);
+  }
+}
+
+.phrase-3 {
+  animation: float-phrase-3 9s linear infinite;
+}
+
+@keyframes float-phrase-3 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(-6px) rotate(-0.1deg);
+  }
+
+  60% {
+    transform: translateY(4px) rotate(0.2deg);
+  }
 }
 
 
@@ -361,11 +555,14 @@ h3 {
 
 .phrase-container {
   display: flex;
-  justify-content: space-between; /* equal space between boxes */
+  justify-content: space-between;
+  /* equal space between boxes */
   align-items: center;
-  width: 100%; /* fill full width of .responsive-rectangle */
+  width: 100%;
+  /* fill full width of .responsive-rectangle */
   padding: 10%;
-  gap: 8px; /* optional: controls space between items */
+  gap: 8px;
+  /* optional: controls space between items */
   z-index: 1;
 }
 
@@ -432,12 +629,14 @@ h3 {
   background-color: #fff;
 }
 
-#d3-container-2 {
+#mapbox-container-1 {
   position: relative;
   height: 430px;
   clip-path: inset(0px 0px 30px 0px);
   margin-bottom: -24px;
 }
+
+
 
 /* Time slider styling */
 #time-slider-container {
@@ -498,4 +697,13 @@ h3 {
 
 .grasshopper-image {
   width: 50%;
+}
+
+
+
+
+
+.diagram-image {
+  width: 60%;
+  height: auto;
 }
