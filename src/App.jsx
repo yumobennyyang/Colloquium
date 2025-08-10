@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 import { useRef } from 'react';
 import VariableProximity from './components/VariableProximity';
 import FluidGlass from './components/FluidGlass'
-
+import MapboxNoiseMap from './components/MapboxNoiseMap.jsx';
 
 import DecayCard from './components/DecayCard';
 
@@ -96,7 +96,7 @@ function App() {
 
 
     // Enter animations for multiple elements
-    const animatedElements = document.querySelectorAll('.framework-title, .page-text, video-text, .label, .precedent-1, .video-1, .tilted-card-1');
+    const animatedElements = document.querySelectorAll('.framework-title, .page-text, video-text, .label, .precedent-1, .video-1, .tilted-card-1, .thank-you');  
     animatedElements.forEach((element) => {
       if (element) {
         // Set initial state
@@ -146,7 +146,7 @@ function App() {
 
 
 
-    const animated47 = document.querySelectorAll('.precedent-2, .video-2 ');
+    const animated47 = document.querySelectorAll('.precedent-2, .video-2, .question-1 ');
     animated47.forEach((element) => {
       if (element) {
         // Set initial state
@@ -169,7 +169,7 @@ function App() {
     });
 
 
-    const animated53 = document.querySelectorAll('.precedent-3, .video-3, .tilted-card-2');
+    const animated53 = document.querySelectorAll('.precedent-3, .video-3, .tilted-card-2, .question-2');
     animated53.forEach((element) => {
       if (element) {
         // Set initial state
@@ -192,7 +192,7 @@ function App() {
     });
 
 
-    const animatedVisuals = document.querySelectorAll('.circle-container, .page-image, .precedent-4, .video-4, .tilted-card-3, .diagram-image ');
+    const animatedVisuals = document.querySelectorAll('.circle-container, .page-image, .precedent-4, .video-4, .tilted-card-3, .diagram-image, .grasshopper-image, .canvas-block, .question-3 ');
     animatedVisuals.forEach((element) => {
       if (element) {
         // Set initial state
@@ -413,11 +413,23 @@ function App() {
 
       <div className="page">
         <div className="questions">
-          <h1>Can a system not only respond, but empathize? Not just compute, but suggest?
+
+          <h1>
+            <span className="question-1">
+              Can a system not only respond, but empathize? Not just compute, but suggest?
+
+            </span>
             <br></br><br></br>
-            How do we reflect, critique, or offer alternatives to normative technologies of urban navigation?
+            <span className="question-2">
+              How do we reflect, critique, or offer alternatives to normative technologies of urban navigation?
+            </span>
             <br></br><br></br>
-            How might we design interfaces that foster empathy between users and their environments?</h1>
+            <span className="question-3">
+              How might we design interfaces that foster empathy between users and their environments?
+            </span>
+
+          </h1>
+
         </div>
       </div>
 
@@ -559,20 +571,28 @@ function App() {
       <div className="page">
 
 
-        <img src="./public/noise.png" alt="Noise" className="noise-image" ></img>
 
-        <div class="canvas-block" id="mapbox-container-1">
-          <div id="time-slider-container">
-            <input type="range" min="0" max="47" value="24" id="timeSlider" />
-            <span id="timeLabel">12:00 PM</span>
-          </div>
+
+        <div className="canvas-block">
+          <MapboxNoiseMap />
         </div>
 
       </div>
 
       <div className="page">
-        <img src="./public/grasshopper.png" alt="Grasshopper" className="grasshopper-image" ></img>
+        <img src="./public/grasshopper.gif" alt="Grasshopper" className="grasshopper-image" ></img>
       </div>
+
+
+
+      <div className="page">
+        <h2 className="">
+          <span className="bold-text title-screen thank-you" id="title-screen">thank you.</span>
+        </h2>
+      </div>
+
+
+
     </div>
   )
 }
